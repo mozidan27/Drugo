@@ -4,8 +4,9 @@ import 'package:drugo/screens/onboarding%20view/presentation/widgets/custom_smoo
 import 'package:flutter/material.dart';
 
 class OnBoardingWidgetBody extends StatelessWidget {
-  OnBoardingWidgetBody({super.key, this.onPageChanged});
-  final PageController _controller = PageController();
+  const OnBoardingWidgetBody(
+      {super.key, this.onPageChanged, required this.controller});
+  final PageController controller;
   final void Function(int)? onPageChanged;
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class OnBoardingWidgetBody extends StatelessWidget {
       child: PageView.builder(
         onPageChanged: onPageChanged,
         physics: const BouncingScrollPhysics(),
-        controller: _controller,
+        controller: controller,
         itemCount: onBoardingData.length,
         itemBuilder: (context, index) {
           return Column(
@@ -32,7 +33,7 @@ class OnBoardingWidgetBody extends StatelessWidget {
                 height: 24,
               ),
               CustomSmoothPageIndicator(
-                controller: _controller,
+                controller: controller,
               ),
               const SizedBox(
                 height: 32,

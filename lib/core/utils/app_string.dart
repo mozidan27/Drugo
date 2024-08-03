@@ -3,9 +3,9 @@ abstract class AppStrings {
 
   static const String appName = "Drugo",
       //!On Boarding Strings
-      skip = "Skip",
-      next = "Next",
-      letsStart = "Let's Start";
+      skip = "SKIP",
+      next = "NEXT",
+      letsStart = "LET'S GO";
 }
 
 //Your Personal Medicine Guide

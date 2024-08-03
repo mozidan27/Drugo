@@ -1,13 +1,19 @@
 import 'package:drugo/core/utils/app_color.dart';
-import 'package:drugo/core/utils/app_string.dart';
-import 'package:drugo/core/widgets/custom_button.dart';
 import 'package:drugo/screens/onboarding%20view/presentation/widgets/custom_nav_bar.dart';
+import 'package:drugo/screens/onboarding%20view/presentation/widgets/get_buttons.dart';
 import 'package:drugo/screens/onboarding%20view/presentation/widgets/onbaording_widget_body.dart';
 import 'package:flutter/material.dart';
 
-class OnboardingView extends StatelessWidget {
+class OnboardingView extends StatefulWidget {
   const OnboardingView({super.key});
 
+  @override
+  State<OnboardingView> createState() => _OnboardingViewState();
+}
+
+class _OnboardingViewState extends State<OnboardingView> {
+  final PageController _controller = PageController(initialPage: 0);
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,12 +27,16 @@ class OnboardingView extends StatelessWidget {
                 const SizedBox(height: 40),
                 const CustomNavBar(),
                 const SizedBox(height: 32),
-                OnBoardingWidgetBody(),
-                const SizedBox(height: 88),
-                CustomButton(
-                  text: AppStrings.next,
-                  onTap: () {},
+                OnBoardingWidgetBody(
+                  onPageChanged: (index) {
+                    setState(() {
+                      currentIndex = index;
+                    });
+                  },
+                  controller: _controller,
                 ),
+                const SizedBox(height: 88),
+                GetButtons(currentIndex: currentIndex, controller: _controller),
                 const SizedBox(height: 17),
               ],
             ),

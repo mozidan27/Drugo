@@ -1,39 +1,59 @@
-import 'package:drugo/core/utils/app_assets.dart';
-import 'package:drugo/core/utils/app_color.dart';
+import 'package:drugo/core/utils/app_text_style.dart';
+import 'package:drugo/screens/onboarding%20view/data/model/on_boarding_model.dart';
+import 'package:drugo/screens/onboarding%20view/presentation/widgets/custom_smooth_page_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBoardingWidgetBody extends StatelessWidget {
-  OnBoardingWidgetBody({super.key});
+  OnBoardingWidgetBody({super.key, this.onPageChanged});
   final PageController _controller = PageController();
-
+  final void Function(int)? onPageChanged;
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return SizedBox(
+      height: 500,
       child: PageView.builder(
+        onPageChanged: onPageChanged,
+        physics: const BouncingScrollPhysics(),
         controller: _controller,
-        itemCount: 3,
+        itemCount: onBoardingData.length,
         itemBuilder: (context, index) {
           return Column(
             children: [
-              Image.asset(Assets.imagesDoc1),
-              SmoothPageIndicator(
+              Container(
+                height: 290,
+                width: 343,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage(onBoardingData[index].imagePath),
+                      fit: BoxFit.cover),
+                ),
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              CustomSmoothPageIndicator(
                 controller: _controller,
-                count: 3,
-                effect: SwapEffect(
-                    activeDotColor: AppColors.primaryColor,
-                    dotColor: AppColors.white,
-                    dotHeight: 10,
-                    dotWidth: 28,
-                    type: SwapType.yRotation),
-
-                //  const JumpingDotEffect(
-                //   dotHeight: 16,
-                //   dotWidth: 16,
-                //   jumpScale: .7,
-                //   verticalOffset: 15,
-                // ),
-              )
+              ),
+              const SizedBox(
+                height: 32,
+              ),
+              Text(
+                onBoardingData[index].title,
+                style: CustomTextStyles.poppins500style24,
+                textAlign: TextAlign.center,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
+              const SizedBox(
+                height: 16,
+              ),
+              Text(
+                onBoardingData[index].subtitle,
+                style: CustomTextStyles.poppins300style16,
+                textAlign: TextAlign.center,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
             ],
           );
         },

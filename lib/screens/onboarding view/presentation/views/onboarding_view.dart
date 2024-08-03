@@ -1,6 +1,7 @@
 import 'package:drugo/core/utils/app_color.dart';
-import 'package:drugo/core/utils/app_text_style.dart';
+import 'package:drugo/core/utils/app_string.dart';
 import 'package:drugo/core/widgets/custom_button.dart';
+import 'package:drugo/screens/onboarding%20view/presentation/widgets/custom_nav_bar.dart';
 import 'package:drugo/screens/onboarding%20view/presentation/widgets/onbaording_widget_body.dart';
 import 'package:flutter/material.dart';
 
@@ -14,14 +15,19 @@ class OnboardingView extends StatelessWidget {
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: SafeArea(
-            child: Column(
+            child: ListView(
+              physics: const BouncingScrollPhysics(),
               children: [
-                Text(
-                  'Skip',
-                  style: CustomTextStyles.poppins400style16,
-                ),
+                const SizedBox(height: 40),
+                const CustomNavBar(),
+                const SizedBox(height: 32),
                 OnBoardingWidgetBody(),
-                CustomButton(text: 'next')
+                const SizedBox(height: 88),
+                CustomButton(
+                  text: AppStrings.next,
+                  onTap: () {},
+                ),
+                const SizedBox(height: 17),
               ],
             ),
           ),

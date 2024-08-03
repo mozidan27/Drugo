@@ -1,4 +1,6 @@
+import 'package:drugo/core/database/cache/cache_helper.dart';
 import 'package:drugo/core/funcations/navigation.dart';
+import 'package:drugo/core/services/service_locator.dart';
 import 'package:drugo/core/utils/app_string.dart';
 import 'package:drugo/core/widgets/custom_button.dart';
 import 'package:drugo/screens/onboarding%20view/data/model/on_boarding_model.dart';
@@ -17,6 +19,8 @@ class GetButtons extends StatelessWidget {
         ? CustomButton(
             text: AppStrings.letsStart,
             onTap: () {
+              getIt<CacheHelper>()
+                  .saveData(key: "isOnBoardingVisited", value: true);
               customReplacementNavigate(context, '/homepage');
             },
           )

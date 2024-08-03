@@ -1,5 +1,5 @@
 import 'package:drugo/core/routes/app_router.dart';
-import 'package:drugo/screens/splash%20view/views/splash_view.dart';
+import 'package:drugo/screens/onboarding%20view/presentation/views/onboarding_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +12,7 @@ class Drugo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const SplashView(),
+      home: const OnboardingView(),
       debugShowCheckedModeBanner: false,
       routes: buildAppRoutes(),
     );

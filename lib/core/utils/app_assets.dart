@@ -21,13 +21,21 @@ class Assets {
   /// assets/images/cart.svg
   static const String imagesCart = "assets/images/cart.svg";
 
+  /// Assets for imagesDoc1
+  /// assets/images/doc1.png
+  static const String imagesDoc1 = "assets/images/doc1.png";
+
+  /// Assets for imagesDoc2
+  /// assets/images/doc2.png
+  static const String imagesDoc2 = "assets/images/doc2.png";
+
   /// Assets for imagesHome
   /// assets/images/home.svg
   static const String imagesHome = "assets/images/home.svg";
 
-  /// Assets for imagesLogo
-  /// assets/images/logo.png
-  static const String imagesLogo = "assets/images/logo.png";
+  /// Assets for imagesLogoo
+  /// assets/images/logoo.png
+  static const String imagesLogoo = "assets/images/logoo.png";
 
   /// Assets for imagesMed1
   /// assets/images/med1.jpg
@@ -52,6 +60,14 @@ class Assets {
   /// Assets for imagesMed6
   /// assets/images/med6.png
   static const String imagesMed6 = "assets/images/med6.png";
+
+  /// Assets for imagesMed7
+  /// assets/images/med7.png
+  static const String imagesMed7 = "assets/images/med7.png";
+
+  /// Assets for imagesMed8
+  /// assets/images/med8.png
+  static const String imagesMed8 = "assets/images/med8.png";
 
   /// Assets for imagesMenu
   /// assets/images/menu.svg

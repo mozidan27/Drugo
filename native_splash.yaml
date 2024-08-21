@@ -4,7 +4,7 @@ flutter_native_splash:
   web: false
 
   color: "#242d48"
-  image: "assets/images/logoo.png"
+  image: "assets/images/9.png"
  
   color_dark: "#242d48"
-  image_dark: "assets/images/logoo.png"
+  image_dark: "assets/images/9.png"

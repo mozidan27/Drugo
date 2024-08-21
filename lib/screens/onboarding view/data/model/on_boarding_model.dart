@@ -11,16 +11,16 @@ class OnBoardingModel {
 
 List<OnBoardingModel> onBoardingData = [
   OnBoardingModel(
-      imagePath: Assets.imagesDoc1,
+      imagePath: Assets.images4,
       title: 'Your Personal Medicine Guide',
       subtitle:
           'Discover Detailed Information and Insights on Your Medications'),
   OnBoardingModel(
-      imagePath: Assets.imagesDoc1,
+      imagePath: Assets.images6,
       title: 'Find Equivalent Medicines',
       subtitle: 'Locate Alternatives with the Same Active Ingredient'),
   OnBoardingModel(
-      imagePath: Assets.imagesDoc1,
+      imagePath: Assets.images3,
       title: 'Check Latest Prices',
       subtitle: 'Get the Most Recent Updates on Medication Costs'),
 ];
